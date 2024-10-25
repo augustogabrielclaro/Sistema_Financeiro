@@ -1,4 +1,3 @@
-#ifndef FUNCOES_H
 #define FUNCOES_H
 
 typedef struct {
@@ -49,4 +48,3 @@ void menu_cadastro();
 
 
 
-#endif;
