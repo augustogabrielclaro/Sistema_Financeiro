@@ -25,9 +25,9 @@ void gotoxy(int x, int y)
 int main()
 {
     // Declaração das variáveis
-    lista_contas l;
-    l.primeiro = NULL;
-    l.ultimo = NULL;
+    lista_contas lista_contas;
+    lista_contas.primeiro = NULL;
+    lista_contas.ultimo = NULL;
 
     lista_movim m;
     m.primeiro = NULL;
@@ -35,6 +35,7 @@ int main()
 
     int opc;
 
+    // Programa
     do
     {
         tela();
@@ -51,7 +52,7 @@ int main()
 
         switch (opc) {
             case 1:
-                menu_cadastro();
+                menu_cadastro(&lista_contas);
                 break;
             case 2:
                 //menu_movim();

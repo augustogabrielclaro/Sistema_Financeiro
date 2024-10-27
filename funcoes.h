@@ -1,4 +1,9 @@
 #define FUNCOES_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
 
 // Estrutura das contas bancárias
 typedef struct {
@@ -10,14 +15,14 @@ typedef struct {
     double valor_saldo;
     double valor_limite;
     char status[10];
-} conta_bancaria;
+} reg_contas;
 
 // Apontador do tipo item de conta
 typedef struct tipoItem_conta *tipoApontador_conta;
 
 // Tipo item conta
-typedef struct {
-    conta_bancaria conteudo;
+typedef struct tipoItem_conta {
+    reg_contas conteudo;
     tipoApontador_conta proximo;
 } tipoItem_conta;
 
@@ -63,5 +68,10 @@ void menu();
 
 void limpar();
 
-void menu_cadastro();
+void menu_cadastro(lista_contas *lista_contas);
 
+void cad_final(lista_contas *lista_contas);
+
+void tela_contas();
+
+void switchGravarOutro(int resp);

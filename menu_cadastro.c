@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-void menu_cadastro()
+void menu_cadastro(lista_contas *lista_contas)
 {
     int opc;
     do
@@ -34,6 +34,7 @@ void menu_cadastro()
         switch (opc)
         {
         case 1:
+            cad_final(lista_contas);
             getch();
             break;
         case 9:
