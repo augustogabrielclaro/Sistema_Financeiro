@@ -2,12 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Função da tela
 
 void tela()
 {
     system("cls");
-    gotoxy(7, 23);
-    printf("                                           ");
     int lin = 1;
     int col = 1;
     gotoxy(col, lin);
