@@ -1,0 +1,4 @@
+Ocorria um pequeno bug quando digitavamos uma opção inválida do tipo char no menu principal, onde o programa não lia mais dados.
+Foi corrigido com a limpeza do buffer.
+
+Também foi adicionado cor a tela do programa, utilizando a cor verde (0A). 

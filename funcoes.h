@@ -26,6 +26,7 @@ typedef struct tipoItem_conta {
     tipoApontador_conta proximo;
 } tipoItem_conta;
 
+
 // Lista das contas
 typedef struct {
     tipoApontador_conta primeiro;

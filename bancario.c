@@ -35,6 +35,8 @@ int main()
 
     int opc;
 
+    system("color 0A");
+
     // Programa
     do
     {
@@ -49,6 +51,7 @@ int main()
         gotoxy(7, 23);
         printf("Digite sua opcao: ");
         scanf("%d", &opc);
+        fflush(stdin); // Limpa o buffer para o programa não travar na proxima leitura 
 
         switch (opc) {
             case 1:
