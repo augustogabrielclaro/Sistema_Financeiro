@@ -10,6 +10,8 @@ void cad_final(lista_contas *lista_contas)
     int resp;
     do
     {
+        opc = 0;
+
         tela();
         tela_contas();
         gotoxy(25, 3);
@@ -60,9 +62,11 @@ void cad_final(lista_contas *lista_contas)
         fflush(stdin);
         fgets(reg_contas.status, 10, stdin);
 
+        do{
         gotoxy(7, 23);
         printf("Deseja gravar no sistema? [1] Sim [2] Nao: ");
         scanf("%d", &opc);
+        fflush(stdin);
 
         switch (opc)
         {
@@ -92,11 +96,17 @@ void cad_final(lista_contas *lista_contas)
             break;
         }
 
+        } while (opc != 1 && opc != 2);
+
+        do{
         limpar();
         printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
         scanf("%d", &resp);
+        fflush(stdin);
         
         switchGravarOutro(resp);
+
+        } while (resp != 1 && resp != 2);
 
     } while (resp != 2);
 }
