@@ -5,11 +5,9 @@
 
 void menu_cadastro(lista_contas *lista_contas)
 {
-    int opc;
+    int opc2;
     do
     {
-        opc = 0;
-
         tela();
         gotoxy(17, 5);
         printf("[1] Cadastrar no final da lista das contas");
@@ -31,10 +29,10 @@ void menu_cadastro(lista_contas *lista_contas)
         printf("[9] Voltar ao menu principal ");
         gotoxy(7, 23);
         printf("Digite sua opcao: ");
-        scanf("%d", &opc);
+        scanf("%d", &opc2);
         fflush(stdin);
 
-        switch (opc)
+        switch (opc2)
         {
         case 1:
             cad_final(lista_contas);
@@ -49,5 +47,5 @@ void menu_cadastro(lista_contas *lista_contas)
             getch();
             break;
         }
-    } while (opc != 9);
+    } while (opc2 != 9);
 }

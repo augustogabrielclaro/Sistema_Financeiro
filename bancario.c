@@ -41,7 +41,6 @@ int main()
     do
     {
         opc = 0;
-
         tela();
         gotoxy(25, 10);
         printf("1 - Cadastro de contas");

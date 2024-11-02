@@ -45,3 +45,10 @@ void tela()
     gotoxy(2, 23);
     printf("MSG: ");
 }
+
+// Pra que serve?
+// Tantos códigos?
+// Se a vida
+// Não é programada
+// E as melhores coisas
+// Não têm lógica.
