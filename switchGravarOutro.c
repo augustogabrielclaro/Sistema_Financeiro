@@ -8,7 +8,6 @@ void switchGravarOutro(int resp) {
             return;
         default:
             limpar();
-            gotoxy(7, 23);
             printf("Opcao invalida!");
             getch();
             break;

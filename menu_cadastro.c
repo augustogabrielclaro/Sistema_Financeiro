@@ -42,7 +42,6 @@ void menu_cadastro(lista_contas *lista_contas)
             break;
         default:
             limpar();
-            gotoxy(7, 23);
             printf("Opcao invalida!");
             getch();
             break;

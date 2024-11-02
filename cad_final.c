@@ -87,14 +87,12 @@ void cad_final(lista_contas *lista_contas)
             break;
         default:
             limpar();
-            gotoxy(7, 23);
             printf("Opcao invalida!");
             getch();
             break;
         }
 
         limpar();
-        gotoxy(7, 23);
         printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
         scanf("%d", &resp);
         
