@@ -4,7 +4,7 @@ Data.....: 24/10/2024
 Objetivo.: Criar um sistema de gerenciamento financeiro
 ************************************************************************/
 
-// PARA COMPILAR: gcc -g *.c -o nomeDoArquivo
+// PARA COMPILAR: gcc *.c -o nomeDoArquivo.exe
 
 #include <stdio.h>
 #include <windows.h>

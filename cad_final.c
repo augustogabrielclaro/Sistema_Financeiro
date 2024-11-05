@@ -24,7 +24,8 @@ void cad_final(lista_contas *lista_contas)
         // Leitura do codigo
         gotoxy(25, 6);
         scanf("%d", &reg_contas.codigo_conta);
-        if (reg_contas.codigo_conta == 0) {
+        if (reg_contas.codigo_conta == 0)
+        {
             return;
         }
         // Leitura do nome
@@ -62,49 +63,51 @@ void cad_final(lista_contas *lista_contas)
         fflush(stdin);
         fgets(reg_contas.status, 10, stdin);
 
-        do{
-        gotoxy(7, 23);
-        printf("Deseja gravar no sistema? [1] Sim [2] Nao: ");
-        scanf("%d", &opc);
-        fflush(stdin);
-
-        switch (opc)
+        do
         {
-        case 1:
-            p = (tipoApontador_conta)malloc(sizeof(tipoItem_conta));
-            p->conteudo = reg_contas;
-            p->proximo = NULL;
+            gotoxy(7, 23);
+            printf("Deseja gravar no sistema? [1] Sim [2] Nao: ");
+            scanf("%d", &opc);
+            fflush(stdin);
 
-            if (lista_contas->primeiro == NULL)
+            switch (opc)
             {
-                lista_contas->primeiro = p;
-                lista_contas->ultimo = p;
-            }
-            else
-            {
-                lista_contas->ultimo->proximo = p;
-                lista_contas->ultimo = p;
-            }
-            break;
+            case 1:
+                p = (tipoApontador_conta)malloc(sizeof(tipoItem_conta));
+                p->conteudo = reg_contas;
+                p->proximo = NULL;
 
-        case 2:
-            break;
-        default:
-            limpar();
-            printf("Opcao invalida!");
-            getch();
-            break;
-        }
+                if (lista_contas->primeiro == NULL)
+                {
+                    lista_contas->primeiro = p;
+                    lista_contas->ultimo = p;
+                }
+                else
+                {
+                    lista_contas->ultimo->proximo = p;
+                    lista_contas->ultimo = p;
+                }
+                break;
+
+            case 2:
+                break;
+            default:
+                limpar();
+                printf("Opcao invalida!");
+                getch();
+                break;
+            }
 
         } while (opc != 1 && opc != 2);
 
-        do{
-        limpar();
-        printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
-        scanf("%d", &resp);
-        fflush(stdin);
-        
-        switchGravarOutro(resp);
+        do
+        {
+            limpar();
+            printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
+            scanf("%d", &resp);
+            fflush(stdin);
+
+            switchGravarOutro(resp);
 
         } while (resp != 1 && resp != 2);
 

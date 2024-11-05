@@ -12,8 +12,8 @@ typedef struct {
     char agencia[10];
     char numero_conta[20];
     char tipo_conta[20];
-    double valor_saldo;
-    double valor_limite;
+    float valor_saldo;
+    float valor_limite;
     char status[10];
 } reg_contas;
 
@@ -39,8 +39,8 @@ typedef struct {
     int codigo_conta;
     char dt_movimento[11];
     char tp_movimentacao[15];
-    double valor_movimento;
-    double valor_saldo;
+    float valor_movimento;
+    float valor_saldo;
 } reg_movimentos;
 
 // Apontador do tipo item de movimentos
@@ -76,3 +76,5 @@ void cad_final(lista_contas *lista_contas);
 void tela_contas();
 
 void switchGravarOutro(int resp);
+
+void listar_contas(lista_contas *lista_contas);

@@ -38,6 +38,9 @@ void menu_cadastro(lista_contas *lista_contas)
             cad_final(lista_contas);
             getch();
             break;
+        case 8:
+            listar_contas(lista_contas);
+            break;
         case 9:
             return;
             break;

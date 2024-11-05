@@ -6,6 +6,7 @@ void switchGravarOutro(int resp) {
             break;
         case 2:
             return;
+            break;
         default:
             limpar();
             printf("Opcao invalida!");
