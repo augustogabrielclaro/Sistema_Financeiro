@@ -2,20 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void listar_contas(lista_contas *lista_contas) {
+void listar_contas(lista_contas *lista_contas)
+{
     tipoApontador_conta p;
     p = lista_contas->primeiro;
     int resp;
-    
-    if (lista_contas->primeiro == NULL) {
+
+    if (lista_contas->primeiro == NULL)
+    {
         limpar();
         printf("Ainda nao ha nenhum cadastrado!");
         getch();
         return;
     }
 
-    while (p != NULL) {
-        resp = 0;
+    while (p != NULL)
+    {
+
         tela();
         tela_contas();
 
@@ -43,22 +46,29 @@ void listar_contas(lista_contas *lista_contas) {
         gotoxy(25, 20);
         printf("%s", p->conteudo.status);
 
-        do {
-            limpar();
-            printf("Deseja ir para o proximo? [1] Sim [2] Nao: ");
-            scanf("%d", &resp);
-            switch (resp) {
-                case 1:
-                    p = p->proximo;
-                    if (p == NULL) {
-                        limpar();
-                        printf("Nao ha mais para listar!");
-                        getch();
-                        return;
-                    }
-                    break;
-                switchGravarOutro(resp);
+        resp = 0;
+        limpar();
+        printf("Deseja ir para o proximo? [1] Sim [2] Nao: ");
+        scanf("%d", &resp);
+        fflush(stdin);
+
+        switch (resp)
+        {
+        case 1:
+            p = p->proximo;
+            if (p == NULL)
+            {
+                limpar();
+                printf("Nao ha mais para listar!");
+                getch();
+                return;
             }
-        } while (resp != 1 && resp != 2);
+            break;
+        case 2:
+            return;
+        default:
+            sDefault();
+            break;
+        }
     }
 }

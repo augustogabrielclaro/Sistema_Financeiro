@@ -75,6 +75,6 @@ void cad_final(lista_contas *lista_contas);
 
 void tela_contas();
 
-void switchGravarOutro(int resp);
+void sDefault();
 
 void listar_contas(lista_contas *lista_contas);

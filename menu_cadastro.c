@@ -45,9 +45,7 @@ void menu_cadastro(lista_contas *lista_contas)
             return;
             break;
         default:
-            limpar();
-            printf("Opcao invalida!");
-            getch();
+            sDefault();
             break;
         }
     } while (opc2 != 9);

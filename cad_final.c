@@ -92,9 +92,7 @@ void cad_final(lista_contas *lista_contas)
             case 2:
                 break;
             default:
-                limpar();
-                printf("Opcao invalida!");
-                getch();
+                sDefault();
                 break;
             }
 
@@ -107,7 +105,16 @@ void cad_final(lista_contas *lista_contas)
             scanf("%d", &resp);
             fflush(stdin);
 
-            switchGravarOutro(resp);
+            switch (resp) {
+                case 1:
+                    break;
+                case 2:
+                    return;
+                    break;
+                default:
+                    sDefault();
+                    break;
+            }
 
         } while (resp != 1 && resp != 2);
 

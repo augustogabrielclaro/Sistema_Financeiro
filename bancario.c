@@ -69,10 +69,7 @@ int main()
                 return 0;
                 break;
             default:
-                limpar();
-                gotoxy(7, 23);
-                printf("Opcao invalida!");
-                getch();
+                sDefault();
                 break;
         }
     } while (opc != 3);
