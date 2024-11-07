@@ -8,6 +8,8 @@ void menu_cadastro(lista_contas *lista_contas)
     int opc2;
     do
     {
+        gotoxy(20, 3);
+        printf("MENU DE CADASTRO / REMOCAO DE CONTAS");
         tela();
         gotoxy(17, 5);
         printf("[1] Cadastrar no final da lista das contas");
@@ -36,7 +38,9 @@ void menu_cadastro(lista_contas *lista_contas)
         {
         case 1:
             cad_final(lista_contas);
-            getch();
+            break;
+        case 2:
+            cad_inicio(lista_contas);
             break;
         case 8:
             listar_contas(lista_contas);

@@ -38,8 +38,6 @@ void tela()
 
     gotoxy(3, 2);
     printf("UNICV");
-    gotoxy(22, 3);
-    printf("SISTEMA DE GERENCIAMENTO FINANCEIRO");
     gotoxy(60, 2);
     printf("AUGUSTO E PEDRO");
     gotoxy(2, 23);

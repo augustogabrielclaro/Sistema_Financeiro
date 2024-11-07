@@ -78,3 +78,5 @@ void tela_contas();
 void sDefault();
 
 void listar_contas(lista_contas *lista_contas);
+
+void cad_inicio(lista_contas *lista_contas);
