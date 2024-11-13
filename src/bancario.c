@@ -4,7 +4,7 @@ Data.....: 24/10/2024
 Objetivo.: Criar um sistema de gerenciamento financeiro
 ************************************************************************/
 
-// PARA COMPILAR: gcc *.c -o nomeDoArquivo.exe
+// PARA COMPILAR: gcc -g .\include\funcoes.h .\src\*.c -o .\output\bancario
 
 #include <stdio.h>
 #include <windows.h>
@@ -12,7 +12,7 @@ Objetivo.: Criar um sistema de gerenciamento financeiro
 #include <conio.h>
 #include <string.h>
 
-#include "funcoes.h"
+#include "C:\Users\augus\Documents\Projeto\trabalho_final\include\funcoes.h"
 
 void gotoxy(int x, int y)
 {
