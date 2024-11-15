@@ -12,7 +12,7 @@ Objetivo.: Criar um sistema de gerenciamento financeiro
 #include <conio.h>
 #include <string.h>
 
-#include "C:\Users\augus\Documents\Projeto\trabalho_final\include\funcoes.h"
+#include "funcoes.h"
 
 void gotoxy(int x, int y)
 {

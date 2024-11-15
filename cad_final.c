@@ -1,8 +1,9 @@
-#include "C:\Users\augus\Documents\Projeto\trabalho_final\include\funcoes.h"
+#include "funcoes.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-void cad_inicio(lista_contas *lista_contas) {
+void cad_final(lista_contas *lista_contas)
+{
     reg_contas reg_contas;
     tipoApontador_conta p;
     int opc;
@@ -16,7 +17,7 @@ void cad_inicio(lista_contas *lista_contas) {
         gotoxy(25, 3);
         printf("                                          ");
         gotoxy(33, 3);
-        printf("CADASTRO NO INICIO");
+        printf("CADASTRO NO FINAL");
         gotoxy(7, 23);
         printf("Digite o codigo 0 para sair!");
 
@@ -76,26 +77,29 @@ void cad_inicio(lista_contas *lista_contas) {
                 p->conteudo = reg_contas;
                 p->proximo = NULL;
 
-                if (lista_contas->primeiro == NULL) {
+                if (lista_contas->primeiro == NULL)
+                {
                     lista_contas->primeiro = p;
                     lista_contas->ultimo = p;
-                } else {
-                    p->proximo = lista_contas->primeiro;
-                    lista_contas->primeiro = p;
-                    if (lista_contas->ultimo == NULL) {
-                        lista_contas->ultimo = lista_contas->primeiro;
-                    }
-                    
                 }
+                else
+                {
+                    lista_contas->ultimo->proximo = p;
+                    lista_contas->ultimo = p;
+                }
+                break;
+
             case 2:
                 break;
             default:
                 sDefault();
                 break;
             }
-        }while (opc != 1 && opc != 2);
 
-        do {
+        } while (opc != 1 && opc != 2);
+
+        do
+        {
             limpar();
             printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
             scanf("%d", &resp);
@@ -111,6 +115,7 @@ void cad_inicio(lista_contas *lista_contas) {
                     sDefault();
                     break;
             }
+
         } while (resp != 1 && resp != 2);
 
     } while (resp != 2);
