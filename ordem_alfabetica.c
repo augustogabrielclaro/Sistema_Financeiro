@@ -4,6 +4,9 @@
 
 void ordem_alfabetica(lista_contas *lista_contas) {
      tela();
+
+    gotoxy(22,3);
+    printf("LISTA CONTAS BANCARIAS - ORDEM ALFABETICA");
     gotoxy(2,5);
     printf("Cd Banco");
     gotoxy(2,6);

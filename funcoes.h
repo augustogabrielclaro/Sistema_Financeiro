@@ -92,3 +92,7 @@ void remover_final(lista_contas *lista_contas, lista_movim m);
 void exibir_unica_conta(tipoApontador_conta p);
 
 int conta_movimentacao(lista_movim m, int codigo);
+
+void ordem_alfabetica(lista_contas *lista_contas);
+
+void cadastrar_movim(lista_movim *m, reg_movimentos reg_movimentos);
