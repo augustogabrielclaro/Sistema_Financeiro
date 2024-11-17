@@ -80,3 +80,9 @@ void sDefault();
 void listar_contas(lista_contas *lista_contas);
 
 void cad_inicio(lista_contas *lista_contas);
+
+void cad_posicao(lista_contas *lista_contas);
+
+tipoApontador_conta pesquisa_conta(lista_contas *lista_contas, reg_contas reg_contas);
+
+int conta_contas(lista_contas *lista_contas);

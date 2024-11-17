@@ -42,6 +42,9 @@ void menu_cadastro(lista_contas *lista_contas)
         case 2:
             cad_inicio(lista_contas);
             break;
+        case 3:
+            cad_posicao(lista_contas);
+            break;
         case 8:
             listar_contas(lista_contas);
             break;

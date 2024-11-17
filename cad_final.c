@@ -6,28 +6,39 @@ void cad_final(lista_contas *lista_contas)
 {
     reg_contas reg_contas;
     tipoApontador_conta p;
+    tipoApontador_conta aux;
     int opc;
     int resp;
     do
     {
         opc = 0;
 
-        tela();
-        tela_contas();
-        gotoxy(25, 3);
-        printf("                                          ");
-        gotoxy(33, 3);
-        printf("CADASTRO NO FINAL");
-        gotoxy(7, 23);
-        printf("Digite o codigo 0 para sair!");
-
-        // Leitura do codigo
-        gotoxy(25, 6);
-        scanf("%d", &reg_contas.codigo_conta);
-        if (reg_contas.codigo_conta == 0)
+        do
         {
-            return;
-        }
+            tela();
+            tela_contas();
+            gotoxy(25, 3);
+            printf("                                          ");
+            gotoxy(33, 3);
+            printf("CADASTRO NO FINAL");
+            gotoxy(7, 23);
+            printf("Digite o codigo 0 para sair!");
+
+            // Leitura do codigo
+            gotoxy(25, 6);
+            scanf("%d", &reg_contas.codigo_conta);
+            aux = pesquisa_conta(lista_contas, reg_contas);
+            if (aux != NULL)
+            {
+                limpar();
+                printf("Codigo %d ja cadastrado! Digite outro codigo!", reg_contas.codigo_conta);
+                getch();
+            }
+            if (reg_contas.codigo_conta == 0)
+            {
+                return;
+            }
+        } while (aux != NULL && reg_contas.codigo_conta != 0);
         // Leitura do nome
         gotoxy(25, 8);
         fflush(stdin);
@@ -105,15 +116,16 @@ void cad_final(lista_contas *lista_contas)
             scanf("%d", &resp);
             fflush(stdin);
 
-            switch (resp) {
-                case 1:
-                    break;
-                case 2:
-                    return;
-                    break;
-                default:
-                    sDefault();
-                    break;
+            switch (resp)
+            {
+            case 1:
+                break;
+            case 2:
+                return;
+                break;
+            default:
+                sDefault();
+                break;
             }
 
         } while (resp != 1 && resp != 2);

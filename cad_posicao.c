@@ -1,14 +1,13 @@
 #include "funcoes.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-void cad_inicio(lista_contas *lista_contas)
-{
+void cad_posicao(lista_contas *lista_contas) {
     reg_contas reg_contas;
     tipoApontador_conta p;
     tipoApontador_conta aux;
+    tipoApontador_conta r;
     int opc;
     int resp;
+    int num;
     do
     {
         opc = 0;
@@ -20,16 +19,14 @@ void cad_inicio(lista_contas *lista_contas)
             gotoxy(25, 3);
             printf("                                          ");
             gotoxy(33, 3);
-            printf("CADASTRO NO INICIO");
+            printf("CADASTRO NA POSICAO");
             gotoxy(7, 23);
             printf("Digite o codigo 0 para sair!");
 
             // Leitura do codigo
             gotoxy(25, 6);
             scanf("%d", &reg_contas.codigo_conta);
-
             aux = pesquisa_conta(lista_contas, reg_contas);
-
             if (aux != NULL)
             {
                 limpar();
@@ -83,37 +80,51 @@ void cad_inicio(lista_contas *lista_contas)
             scanf("%d", &opc);
             fflush(stdin);
 
-            switch (opc)
-            {
-            case 1:
-                p = (tipoApontador_conta)malloc(sizeof(tipoItem_conta));
-                p->conteudo = reg_contas;
-                p->proximo = NULL;
+            switch (opc) {
+                case 1:
+                    p = (tipoApontador_conta)malloc(sizeof(tipoItem_conta));
+                    p->conteudo = reg_contas;
+                    p->proximo = NULL;
+                    if (lista_contas->primeiro == NULL) {
+                        lista_contas->primeiro = p;
+                        if (lista_contas->ultimo == NULL) {
+                            lista_contas->ultimo = p;
+                        }
+                    } else {
+                        do {
+                            limpar();
+                            printf("Digite a posicao a inserir: ");
+                            scanf("%d", &num);
+                            if (num < 1 || num > conta_contas(lista_contas) + 1) {
+                                limpar();
+                                printf("Digite uma posicao valida!");
+                                getch();
+                            }
+                        } while (num < 1 || num > conta_contas(lista_contas) + 1);
 
-                if (lista_contas->primeiro == NULL)
-                {
-                    lista_contas->primeiro = p;
-                    lista_contas->ultimo = p;
-                }
-                else
-                {
-                    p->proximo = lista_contas->primeiro;
-                    lista_contas->primeiro = p;
-                    if (lista_contas->ultimo == NULL)
-                    {
-                        lista_contas->ultimo = lista_contas->primeiro;
+                        if (num == 1) {
+                            p->proximo = lista_contas->primeiro;
+                            lista_contas->primeiro = p;
+                            if (lista_contas->ultimo == NULL) {
+                                lista_contas->ultimo = p;
+                            }
+                        } else {
+                            r = (tipoApontador_conta) malloc (sizeof(tipoItem_conta));
+                            r->conteudo = reg_contas;
+                            p = lista_contas->primeiro;
+
+                            for (int x = 1; x <= num - 2; x++) {
+                                p = p->proximo;
+                            }
+                            r->proximo = p->proximo;
+                            p->proximo = r;
+                        }
                     }
-                }
-            case 2:
-                break;
-            default:
-                sDefault();
-                break;
+
             }
         } while (opc != 1 && opc != 2);
 
-        do
-        {
+        do {
             limpar();
             printf("Deseja cadastrar outro? [1] Sim [2] Nao: ");
             scanf("%d", &resp);
@@ -131,6 +142,5 @@ void cad_inicio(lista_contas *lista_contas)
                 break;
             }
         } while (resp != 1 && resp != 2);
-
     } while (resp != 2);
 }
