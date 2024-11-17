@@ -47,7 +47,7 @@ typedef struct {
 typedef struct tipoItem_movim *tipoApontador_movim;
 
 // Tipo item dos movimentos
-typedef struct {
+typedef struct tipoItem_movim{
     reg_movimentos conteudo;
     tipoApontador_movim anterior;
     tipoApontador_movim proximo;
@@ -69,7 +69,7 @@ void menu();
 
 void limpar();
 
-void menu_cadastro(lista_contas *lista_contas);
+void menu_cadastro(lista_contas *lista_contas, lista_movim m);
 
 void cad_final(lista_contas *lista_contas);
 
@@ -86,3 +86,9 @@ void cad_posicao(lista_contas *lista_contas);
 tipoApontador_conta pesquisa_conta(lista_contas *lista_contas, reg_contas reg_contas);
 
 int conta_contas(lista_contas *lista_contas);
+
+void remover_final(lista_contas *lista_contas, lista_movim m);
+
+void exibir_unica_conta(tipoApontador_conta p);
+
+int conta_movimentacao(lista_movim m, int codigo);

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-void menu_cadastro(lista_contas *lista_contas)
+void menu_cadastro(lista_contas *lista_contas, lista_movim m)
 {
     int opc2;
     do
@@ -44,6 +44,9 @@ void menu_cadastro(lista_contas *lista_contas)
             break;
         case 3:
             cad_posicao(lista_contas);
+            break;
+        case 4:
+            remover_final(lista_contas, m);
             break;
         case 8:
             listar_contas(lista_contas);
