@@ -85,7 +85,7 @@ void remover_final(lista_contas *lista_contas, lista_movim m)
             if (conta_movimentacao(m, p->conteudo.codigo_conta) != 0)
             {
                 limpar();
-                printf("A conta nao pode ser excluida!");
+                printf("A conta nao pode ser excluida, pois tem movimentacoes!");
                 getch();
                 return;
             }

@@ -42,8 +42,6 @@ int main()
     {
         opc = 0;
         tela();
-        gotoxy(22, 3);
-        printf("SISTEMA DE GERENCIAMENTO FINANCEIRO");
         gotoxy(25, 10);
         printf("1 - Cadastro de contas");
         gotoxy(25, 12);

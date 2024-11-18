@@ -8,9 +8,9 @@ void menu_cadastro(lista_contas *lista_contas, lista_movim m)
     int opc2;
     do
     {
+        tela();
         gotoxy(20, 3);
         printf("MENU DE CADASTRO / REMOCAO DE CONTAS");
-        tela();
         gotoxy(17, 5);
         printf("[1] Cadastrar no final da lista das contas");
         gotoxy(17, 7);

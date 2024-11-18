@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void ordem_alfabetica(lista_contas *lista_contas) {
-     tela();
+    tela();
     gotoxy(2,5);
     printf("Cd Banco");
     gotoxy(2,6);
