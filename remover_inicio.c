@@ -1,7 +1,6 @@
 #include "funcoes.h"
 
-void remover_final(lista_contas *lista_contas, lista_movim m)
-{
+void remover_inicio(lista_contas *lista_contas, lista_movim m) {
     tipoApontador_conta p;
     tipoApontador_conta aux;
     int resp = 0;
@@ -10,7 +9,7 @@ void remover_final(lista_contas *lista_contas, lista_movim m)
     gotoxy(20, 3);
     printf("                                                     ");
     gotoxy(28, 3);
-    printf("REMOCAO NO FINAL DA LISTA");
+    printf("REMOCAO NO INICIO DA LISTA");
 
     // Caso não haja nenhuma conta
     if (lista_contas->primeiro == NULL)
@@ -64,15 +63,7 @@ void remover_final(lista_contas *lista_contas, lista_movim m)
         } while (resp != 1 && resp != 2);
     }
     // Mais de um
-    aux = lista_contas->primeiro;
-    p = aux->proximo;
-
-    while (p->proximo != NULL)
-    {
-        p = p->proximo;
-        aux = aux->proximo;
-    }
-
+    p = lista_contas->primeiro;
     do
     {   
         exibir_unica_conta(p);
@@ -92,9 +83,8 @@ void remover_final(lista_contas *lista_contas, lista_movim m)
             }
             else
             {
+                lista_contas->primeiro = p->proximo;
                 free(p);
-                aux->proximo = NULL;
-                lista_contas->ultimo = aux;
                 limpar();
                 printf("Conta removida com sucesso!");
                 getch();

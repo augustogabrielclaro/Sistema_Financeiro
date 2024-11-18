@@ -63,7 +63,7 @@ void gotoxy();
 
 void tela();
 
-// void menu_movim();
+void menu_movim(lista_contas *lista_contas, lista_movim m);
 
 void menu();
 
@@ -95,4 +95,12 @@ int conta_movimentacao(lista_movim m, int codigo);
 
 void ordem_alfabetica(lista_contas *lista_contas);
 
-void cadastrar_movim(lista_movim *m, reg_movimentos reg_movimentos);
+void cadastrar_movim(lista_contas *lista_contas, lista_movim m);
+
+void remover_inicio(lista_contas *lista_contas, lista_movim m);
+
+void remover_codigo(lista_contas *lista_contas, lista_movim m);
+
+void tela_cad_movim();
+
+void alterar_conta(lista_contas *lista_contas);

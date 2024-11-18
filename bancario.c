@@ -59,7 +59,7 @@ int main()
                 menu_cadastro(&lista_contas, m);
                 break;
             case 2:
-                //menu_movim();
+                menu_movim(&lista_contas, m);
                 break;
             case 3:
                 limpar();

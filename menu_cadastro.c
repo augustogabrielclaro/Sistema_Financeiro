@@ -48,6 +48,12 @@ void menu_cadastro(lista_contas *lista_contas, lista_movim m)
         case 4:
             remover_final(lista_contas, m);
             break;
+        case 5:
+            remover_inicio(lista_contas, m);
+            break;
+        case 6:
+            remover_codigo(lista_contas, m);
+            break;
         case 8:
             listar_contas(lista_contas);
             break;
