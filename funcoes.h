@@ -101,6 +101,8 @@ void remover_inicio(lista_contas *lista_contas, lista_movim m);
 
 void remover_codigo(lista_contas *lista_contas, lista_movim m);
 
-void tela_cad_movim();
+void movim_db_e_cd();
 
 void alterar_conta(lista_contas *lista_contas);
+
+void transf_entre_contas();

@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void tela_cad_movim() {
+void movim_db_e_cd() {
     tela();
     gotoxy(22,3);
     printf("CADASTRAR MOVIMENTACOES BANCARIAS");

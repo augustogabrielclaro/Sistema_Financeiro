@@ -7,7 +7,7 @@ void cadastrar_movim(lista_contas *lista_contas, lista_movim m)
     tipoApontador_conta aux;
     tipoApontador_movim aux_movim;
     int resp;
-    tela_cad_movim();
+    movim_db_e_cd();
 
     gotoxy(25, 6);
 }
