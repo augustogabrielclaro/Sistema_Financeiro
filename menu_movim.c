@@ -25,10 +25,12 @@ void menu_movim(lista_contas *lista_contas, lista_movim m) {
         switch (opc) {
             case 1:
                 // Movimentacao
+                system("cls");
                 movim_db_e_cd();
                 break;
             case 2:
                 // Transferencia
+                system("cls");
                 transf_entre_contas();
                 break;
             case 3:

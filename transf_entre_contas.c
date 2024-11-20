@@ -4,7 +4,7 @@
 void transf_entre_contas()
 {
     tela();
-
+    
     gotoxy(16,3);
     printf("TRANSFERENCIA DE VALORES ENTRE CONTAS BANCARIAS");
 
