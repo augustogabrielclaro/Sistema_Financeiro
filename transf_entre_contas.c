@@ -1,3 +1,6 @@
+#include "funcoes.h"
+
+
 void transf_entre_contas()
 {
     tela();
