@@ -55,7 +55,7 @@ void menu_cadastro(lista_contas *lista_contas, lista_movim m)
             remover_codigo(lista_contas, m);
             break;
         case 8:
-            listar_contas(lista_contas);
+            menu_listagem(lista_contas, m);
             break;
         case 9:
             return;
