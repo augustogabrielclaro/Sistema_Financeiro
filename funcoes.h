@@ -41,6 +41,7 @@ typedef struct {
     char tp_movimentacao[15];
     float valor_movimento;
     float valor_saldo;
+    char favorecido[30];
 } reg_movimentos;
 
 // Apontador do tipo item de movimentos

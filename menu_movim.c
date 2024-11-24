@@ -6,6 +6,7 @@ void menu_movim(lista_contas *lista_contas, lista_movim *m) {
     int opc;
 
     do {
+        tela();
         opc = 0;
         gotoxy(20, 10);
         printf("1 - Movimentacao de Debito e Credito");

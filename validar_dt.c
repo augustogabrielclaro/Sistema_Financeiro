@@ -6,20 +6,32 @@ char *validar_dt(lista_movim *m, int codigo)
     char ultima_dt[11];
     char nova_data[11];
 
-    tipoApontador_movim aux = buscar_ultima_dt(m, codigo);
+    if (dt_inserida == NULL)
+    {
+        limpar();
+        printf("Erro de alocação de memoria!\n");
+        getch();
+        return NULL;
+    }
 
+    
     limpar();
     printf("Digite a data: DD/MM/AAAA");
-
+    gotoxy(30, 16);
+    printf("                             ");
     gotoxy(30, 16);
     fflush(stdin);
     fgets(dt_inserida, 11, stdin);
 
-    if (dt_inserida == NULL)
-    {
-        printf("Erro de alocação de memória!\n");
+    if (strlen(dt_inserida) < 10 || dt_inserida[2] != '/' || dt_inserida[5] != '/') {
+        limpar();
+        printf("Formato de data invalido! Use DD/MM/AAAA");
+        getch();
+        free(dt_inserida);
         return NULL;
     }
+
+    tipoApontador_movim aux = buscar_ultima_dt(m, codigo);
 
     if (aux != NULL)
     {
