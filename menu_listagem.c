@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void menu_listagem(lista_contas *lista_contas, lista_movim m)
+void menu_listagem(lista_contas *lista_contas, lista_movim *m)
 {
     int opc;
 

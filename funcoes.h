@@ -63,13 +63,13 @@ void gotoxy();
 
 void tela();
 
-void menu_movim(lista_contas *lista_contas, lista_movim m);
+void menu_movim(lista_contas *lista_contas, lista_movim *m);
 
 void menu();
 
 void limpar();
 
-void menu_cadastro(lista_contas *lista_contas, lista_movim m);
+void menu_cadastro(lista_contas *lista_contas, lista_movim *m);
 
 void cad_final(lista_contas *lista_contas);
 
@@ -87,26 +87,35 @@ tipoApontador_conta pesquisa_conta(lista_contas *lista_contas, reg_contas reg_co
 
 int conta_contas(lista_contas *lista_contas);
 
-void remover_final(lista_contas *lista_contas, lista_movim m);
+void remover_final(lista_contas *lista_contas, lista_movim *m);
 
 void exibir_unica_conta(tipoApontador_conta p);
 
-int conta_movimentacao(lista_movim m, int codigo);
+int contar_movimentacao_conta(lista_movim *m, int codigo);
 
 void ordem_alfabetica(lista_contas *lista_contas);
 
-void cadastrar_movim(lista_contas *lista_contas, lista_movim m);
+void remover_inicio(lista_contas *lista_contas, lista_movim *m);
 
-void remover_inicio(lista_contas *lista_contas, lista_movim m);
+void remover_codigo(lista_contas *lista_contas, lista_movim *m);
 
-void remover_codigo(lista_contas *lista_contas, lista_movim m);
-
-void movim_db_e_cd();
+void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m);
 
 void alterar_conta(lista_contas *lista_contas);
 
 void transf_entre_contas();
 
-void menu_listagem(lista_contas *lista_contas, lista_movim m);
+void menu_listagem(lista_contas *lista_contas, lista_movim *m);
 
 void consulta_codigo(lista_contas *lista_contas);
+
+int conta_movimentacao(lista_movim *m);
+
+void tela_movim();
+
+char *inverte_data(char *dt_data);
+
+tipoApontador_movim buscar_ultima_dt(lista_movim *m, int codigo);
+
+char *validar_dt(lista_movim *m, int codigo);
+

@@ -1,15 +1,15 @@
 #include "funcoes.h"
 
-int conta_movimentacao(lista_movim m, int codigo) {
+int conta_movimentacao(lista_movim *m) {
+    tipoApontador_movim aux;
     int cont = 0;
-    tipoApontador_movim q;
-    q = m.primeiro;
 
-    while (q != NULL) {
-        if (q->conteudo.codigo_conta == codigo) {
-            cont++;
-        }
+    aux = m->primeiro;
+
+    while (aux != NULL) {
+        cont++;
+        aux = aux->proximo;
     }
 
-    return cont;
+    return cont + 1;
 }

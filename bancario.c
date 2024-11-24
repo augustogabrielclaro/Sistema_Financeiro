@@ -56,10 +56,10 @@ int main()
 
         switch (opc) {
             case 1:
-                menu_cadastro(&lista_contas, m);
+                menu_cadastro(&lista_contas, &m);
                 break;
             case 2:
-                menu_movim(&lista_contas, m);
+                menu_movim(&lista_contas, &m);
                 break;
             case 3:
                 limpar();

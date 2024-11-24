@@ -1,6 +1,6 @@
 #include "funcoes.h"
 
-void remover_inicio(lista_contas *lista_contas, lista_movim m) {
+void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
     tipoApontador_conta p;
     tipoApontador_conta aux;
     int resp = 0;
@@ -35,7 +35,7 @@ void remover_inicio(lista_contas *lista_contas, lista_movim m) {
             switch (resp)
             {
             case 1:
-                if (conta_movimentacao(m, p->conteudo.codigo_conta) != 0)
+                if (contar_movimentacao_conta(m, p->conteudo.codigo_conta) != 0)
                 {
                     limpar();
                     printf("A conta nao pode ser excluida, pois tem movimentacoes!");
@@ -74,7 +74,7 @@ void remover_inicio(lista_contas *lista_contas, lista_movim m) {
         switch (resp)
         {
         case 1:
-            if (conta_movimentacao(m, p->conteudo.codigo_conta) != 0)
+            if (contar_movimentacao_conta(m, p->conteudo.codigo_conta) != 0)
             {
                 limpar();
                 printf("A conta nao pode ser excluida, pois tem movimentacoes!");

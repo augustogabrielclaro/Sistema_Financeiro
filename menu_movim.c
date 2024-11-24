@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menu_movim(lista_contas *lista_contas, lista_movim m) {
+void menu_movim(lista_contas *lista_contas, lista_movim *m) {
     int opc;
 
     do {
+        opc = 0;
         gotoxy(20, 10);
         printf("1 - Movimentacao de Debito e Credito");
 
@@ -21,12 +22,13 @@ void menu_movim(lista_contas *lista_contas, lista_movim m) {
         limpar();
         printf("Digite sua opcao: ");
         scanf("%d", &opc);
+        fflush(stdin);
 
         switch (opc) {
             case 1:
                 // Movimentacao
                 system("cls");
-                movim_db_e_cd();
+                movim_db_e_cd(lista_contas, m);
                 break;
             case 2:
                 // Transferencia

@@ -61,6 +61,7 @@
     "conio.h": "c",
     "funcoes.h": "c",
     "string.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "buscar_ultima_dt": "cpp"
   }
 }
