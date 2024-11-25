@@ -1,10 +1,7 @@
 #include "funcoes.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 #define MAX_PAG 19
-void ordem_alfabetica(lista_contas *lista_contas)
-{
+void ordem_codigo(lista_contas *lista_contas) {
     tipoApontador_conta aux;
     tipoApontador_conta aux2;
     int linha = 7;
@@ -18,13 +15,10 @@ void ordem_alfabetica(lista_contas *lista_contas)
     }
 
     aux = lista_contas->primeiro;
-    while (aux->proximo != NULL)
-    {
+    while (aux->proximo != NULL) {
         aux2 = aux->proximo;
-        while (aux2 != NULL)
-        {
-            if (strcmp(aux->conteudo.banco, aux2->conteudo.banco) > 0)
-            {
+        while (aux2 != NULL) {
+            if (aux->conteudo.codigo_conta > aux2->conteudo.codigo_conta) {
                 reg_contas temp = aux->conteudo;
                 aux->conteudo = aux2->conteudo;
                 aux2->conteudo = temp;
@@ -39,7 +33,7 @@ void ordem_alfabetica(lista_contas *lista_contas)
     {
         tela();
         gotoxy(22, 3);
-        printf("LISTA CONTAS BANCARIAS - ORDEM ALFABETICA");
+        printf("LISTA CONTAS BANCARIAS - ORDEM CODIGO");
         gotoxy(2, 5);
         printf("Cd Banco");
         gotoxy(2, 6);

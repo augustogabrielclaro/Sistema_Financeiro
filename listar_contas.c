@@ -44,7 +44,7 @@ void listar_contas(lista_contas *lista_contas)
         printf("%.2f", p->conteudo.valor_limite);
 
         gotoxy(25, 20);
-        printf("%s", p->conteudo.status);
+        printf("%d", p->conteudo.status);
 
         resp = 0;
         limpar();

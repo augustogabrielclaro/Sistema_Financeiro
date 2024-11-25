@@ -3,7 +3,8 @@
 void alterar_conta(lista_contas *lista_contas)
 {
     tipoApontador_conta aux;
-    reg_contas reg_contas;
+    reg_contas reg_conta;
+    reg_contas copia;
     int campo;
     int resp;
     int resp2;
@@ -15,14 +16,14 @@ void alterar_conta(lista_contas *lista_contas)
         {
             limpar();
             printf("Digite o codigo da conta ou [0] para sair: ");
-            scanf("%d", &reg_contas.codigo_conta);
+            scanf("%d", &reg_conta.codigo_conta);
 
-            if (reg_contas.codigo_conta == 0)
+            if (reg_conta.codigo_conta == 0)
             {
                 return;
             }
 
-            aux = pesquisa_conta(lista_contas, reg_contas);
+            aux = pesquisa_conta(lista_contas, reg_conta);
 
             if (aux == NULL)
             {
@@ -32,9 +33,11 @@ void alterar_conta(lista_contas *lista_contas)
             }
         } while (aux == NULL);
 
+        copia = aux->conteudo;
+        exibir_unica_conta(aux);
         do
         {
-            exibir_unica_conta(aux);
+            
             limpar();
             printf("Digite o campo a ser alterado ou [0] para sair: ");
             scanf("%d", &campo);
@@ -42,35 +45,34 @@ void alterar_conta(lista_contas *lista_contas)
             switch (campo)
             {
             case 0:
-                return;
                 break;
             case 1:
                 gotoxy(25, 8);
                 printf("                                                    ");
                 gotoxy(25, 8);
                 fflush(stdin);
-                fgets(reg_contas.banco, 50, stdin);
+                fgets(aux->conteudo.banco, 50, stdin);
                 break;
             case 2:
                 gotoxy(25, 10);
                 printf("                                                    ");
                 gotoxy(25, 10);
                 fflush(stdin);
-                fgets(reg_contas.agencia, 10, stdin);
+                fgets(aux->conteudo.agencia, 10, stdin);
                 break;
             case 3:
                 gotoxy(25, 12);
                 printf("                                                    ");
                 gotoxy(25, 12);
                 fflush(stdin);
-                fgets(reg_contas.numero_conta, 20, stdin);
+                fgets(aux->conteudo.numero_conta, 20, stdin);
                 break;
             case 4:
                 gotoxy(25, 14);
                 printf("                                                    ");
                 gotoxy(25, 14);
                 fflush(stdin);
-                fgets(reg_contas.tipo_conta, 20, stdin);
+                fgets(aux->conteudo.tipo_conta, 20, stdin);
                 break;
             case 5:
                 limpar();
@@ -81,15 +83,20 @@ void alterar_conta(lista_contas *lista_contas)
                 gotoxy(25, 18);
                 printf("                                                    ");
                 gotoxy(25, 18);
-                scanf("%f", &reg_contas.valor_limite);
+                scanf("%f", &aux->conteudo.valor_limite);
                 getchar();
                 break;
             case 7:
                 gotoxy(25, 20);
                 printf("                                                    ");
-                gotoxy(25, 20);
-                fflush(stdin);
-                fgets(reg_contas.status, 10, stdin);
+                do
+                {
+                    limpar();
+                    printf("[1] Ativa  [2] Inativa");
+                    gotoxy(25, 20);
+                    scanf("%d", &aux->conteudo.status);
+                    fflush(stdin);
+                } while (aux->conteudo.status != 1 && aux->conteudo.status != 2);
                 break;
             default:
                 limpar();
@@ -104,14 +111,15 @@ void alterar_conta(lista_contas *lista_contas)
         {
             limpar();
             printf("Deseja gravar as alteracoes?: [1] Sim [2] Nao: ");
+            fflush(stdin);
             scanf("%d", &resp);
 
             switch (resp)
             {
             case 1:
-                aux->conteudo = reg_contas;
                 break;
             case 2:
+                aux->conteudo = copia;
                 break;
             default:
                 sDefault();
@@ -125,14 +133,14 @@ void alterar_conta(lista_contas *lista_contas)
 
         switch (resp2)
         {
-            case 1:
-                break;
-            case 2:
-                return;
-                break;
-            default:
-                sDefault();
-                break;
+        case 1:
+            break;
+        case 2:
+            return;
+            break;
+        default:
+            sDefault();
+            break;
         }
     } while (resp2 != 2);
 }

@@ -26,5 +26,5 @@ void exibir_unica_conta(tipoApontador_conta p)
     printf("%.2f", p->conteudo.valor_limite);
 
     gotoxy(25, 20);
-    printf("%s", p->conteudo.status);
+    printf("%d", p->conteudo.status);
 }

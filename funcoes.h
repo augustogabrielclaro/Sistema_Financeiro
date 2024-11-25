@@ -14,7 +14,7 @@ typedef struct {
     char tipo_conta[20];
     float valor_saldo;
     float valor_limite;
-    char status[10];
+    int status;
 } reg_contas;
 
 // Apontador do tipo item de conta
@@ -127,3 +127,5 @@ void salvar_contas(lista_contas *lista_contas, const char *name);
 void carregar_movim(lista_movim *m, const char *name);
 
 void carregar_contas(lista_contas *lista_contas, const char *name);
+
+void ordem_codigo(lista_contas *lista_contas);

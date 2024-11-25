@@ -8,6 +8,7 @@ void cad_posicao(lista_contas *lista_contas) {
     int opc;
     int resp;
     int num;
+    int tipo;
     do
     {
         opc = 0;
@@ -54,10 +55,33 @@ void cad_posicao(lista_contas *lista_contas) {
         fgets(reg_contas.numero_conta, 20, stdin);
 
         // Leitura do tipo da conta
-        gotoxy(25, 14);
-        fflush(stdin);
-        fgets(reg_contas.tipo_conta, 20, stdin);
+        do {
+            limpar();
+            printf("[1] Poupanca  [2] Corrente  [3] Cartao de Credito");
+            gotoxy(25, 14);
+            scanf("%d", &tipo);
+            fflush(stdin);
 
+            if (tipo == 1) {
+                strcpy(reg_contas.tipo_conta, "Poupanca");
+                break;
+            } else if (tipo == 2) {
+                strcpy(reg_contas.tipo_conta, "Corrente");
+                break;
+            } else if (tipo == 3) {
+                strcpy(reg_contas.tipo_conta, "Cartao Credito");
+                break;
+            } else {
+                limpar();
+                printf("Opcao invalida!");
+                getch();
+            }
+        } while (1);
+        
+        gotoxy(27, 14);
+        printf("- %s", reg_contas.tipo_conta);
+
+        limpar();
         // Leitura do saldo
         gotoxy(25, 16);
         scanf("%f", &reg_contas.valor_saldo);
@@ -69,9 +93,13 @@ void cad_posicao(lista_contas *lista_contas) {
         getchar();
 
         // Leitura do status da conta
-        gotoxy(25, 20);
-        fflush(stdin);
-        fgets(reg_contas.status, 10, stdin);
+        do {
+            limpar();
+            printf("[1] Ativa  [2] Inativa");
+            gotoxy(25, 20);
+            scanf("%d", &reg_contas.status);
+            fflush(stdin);
+        } while (reg_contas.status != 1 && reg_contas.status != 2);
 
         do
         {

@@ -36,10 +36,10 @@ void menu_listagem(lista_contas *lista_contas, lista_movim *m)
                 consulta_codigo(lista_contas);
                 break;
             case 3:
-                // Ordem de codigo
+                ordem_codigo(lista_contas);
                 break;
             case 4:
-                // Consulta ordem alfabetica
+                ordem_alfabetica(lista_contas);
                 break;
             case 5:
                 return;
