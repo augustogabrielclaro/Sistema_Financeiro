@@ -129,3 +129,5 @@ void carregar_movim(lista_movim *m, const char *name);
 void carregar_contas(lista_contas *lista_contas, const char *name);
 
 void ordem_codigo(lista_contas *lista_contas);
+
+void listar_movim();
