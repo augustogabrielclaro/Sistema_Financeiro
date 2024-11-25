@@ -1,1 +1,1 @@
-gcc *.c -o bancario.exe
+gcc *.c -o ./output/bancario.exe

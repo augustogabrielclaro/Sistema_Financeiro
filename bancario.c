@@ -35,11 +35,16 @@ int main()
 
     int opc;
 
-    system("color 0A");
+    
 
+    system("color 0A");
+    tela();
+    carregar_contas(&lista_contas, "Contas.dat");
+    carregar_movim(&m, "Movimentacoes.dat");
     // Programa
     do
     {
+        
         opc = 0;
         tela();
         gotoxy(25, 10);
@@ -66,6 +71,8 @@ int main()
                 gotoxy(7, 23);
                 printf("Saindo...");
                 Sleep(1000);
+                salvar_contas(&lista_contas, "Contas.dat");
+                salvar_movim(&m, "Movimentacoes.dat");
                 return 0;
                 break;
             default:

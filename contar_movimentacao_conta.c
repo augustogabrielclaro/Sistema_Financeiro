@@ -9,6 +9,7 @@ int contar_movimentacao_conta(lista_movim *m, int codigo) {
         if (q->conteudo.codigo_conta == codigo) {
             cont++;
         }
+        q = q->proximo;
     }
 
     return cont;

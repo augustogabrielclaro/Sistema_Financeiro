@@ -120,3 +120,10 @@ tipoApontador_movim buscar_ultima_dt(lista_movim *m, int codigo);
 
 char *validar_dt(lista_movim *m, int codigo);
 
+void salvar_movim(lista_movim *m, const char *name);
+
+void salvar_contas(lista_contas *lista_contas, const char *name);
+
+void carregar_movim(lista_movim *m, const char *name);
+
+void carregar_contas(lista_contas *lista_contas, const char *name);

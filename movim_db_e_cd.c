@@ -152,11 +152,6 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
                     {
                         novo_saldo = aux->conteudo.valor_saldo - reg_movim.valor_movimento;
                         reg_movim.valor_saldo = novo_saldo;
-                        if (novo_saldo < 0)
-                        {
-                            novo_limite = aux->conteudo.valor_limite;
-                            novo_limite += reg_movim.valor_movimento;
-                        }
                         break;
                     }
                 }
@@ -186,10 +181,6 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
                     movim->proximo = NULL;
                     movim->anterior = NULL;
                     aux->conteudo.valor_saldo = reg_movim.valor_saldo;
-                    if (aux->conteudo.valor_saldo < 0)
-                    {
-                        aux->conteudo.valor_limite += reg_movim.valor_saldo;
-                    }
 
                     if (m->primeiro == NULL)
                     {

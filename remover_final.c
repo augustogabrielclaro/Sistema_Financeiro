@@ -5,6 +5,7 @@ void remover_final(lista_contas *lista_contas, lista_movim *m)
     tipoApontador_conta p;
     tipoApontador_conta aux;
     int resp = 0;
+    int cont = 0;
 
     tela();
     gotoxy(20, 3);
@@ -36,7 +37,8 @@ void remover_final(lista_contas *lista_contas, lista_movim *m)
             switch (resp)
             {
             case 1:
-                if (contar_movimentacao_conta(m, p->conteudo.codigo_conta) != 0)
+                cont = contar_movimentacao_conta(m, p->conteudo.codigo_conta);
+                if (cont != 0)
                 {
                     limpar();
                     printf("A conta nao pode ser excluida, pois tem movimentacoes!");
@@ -83,7 +85,8 @@ void remover_final(lista_contas *lista_contas, lista_movim *m)
         switch (resp)
         {
         case 1:
-            if (contar_movimentacao_conta(m, p->conteudo.codigo_conta) != 0)
+            cont = contar_movimentacao_conta(m, p->conteudo.codigo_conta);
+            if (cont != 0)
             {
                 limpar();
                 printf("A conta nao pode ser excluida, pois tem movimentacoes!");
