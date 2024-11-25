@@ -36,6 +36,7 @@ char *validar_dt(lista_movim *m, int codigo)
     if (aux != NULL)
     {
         strcpy(ultima_dt, inverte_data(aux->conteudo.dt_movimento));
+        limpar();
     }
     else
     {
@@ -44,6 +45,7 @@ char *validar_dt(lista_movim *m, int codigo)
 
     strcpy(nova_data, inverte_data(dt_inserida));
 
+    
     int ano = atoi(nova_data);
     int mes = atoi(&nova_data[5]);
     int dia = atoi(&nova_data[8]);
