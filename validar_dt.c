@@ -23,6 +23,7 @@ char *validar_dt(lista_movim *m, int codigo)
     fflush(stdin);
     fgets(dt_inserida, 11, stdin);
 
+
     if (strlen(dt_inserida) < 10 || dt_inserida[2] != '/' || dt_inserida[5] != '/') {
         limpar();
         printf("Formato de data invalido! Use DD/MM/AAAA");
@@ -43,8 +44,9 @@ char *validar_dt(lista_movim *m, int codigo)
         ultima_dt[0] = '\0';
     }
 
+    limpar();
+    
     strcpy(nova_data, inverte_data(dt_inserida));
-
     
     int ano = atoi(nova_data);
     int mes = atoi(&nova_data[5]);

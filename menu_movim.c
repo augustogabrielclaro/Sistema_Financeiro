@@ -37,7 +37,8 @@ void menu_movim(lista_contas *lista_contas, lista_movim *m) {
                 transf_entre_contas();
                 break;
             case 3:
-                // Consulta de movimentacoes
+                // Listar
+                listar_movim(lista_contas, m);
                 break;
             case 4:
                 return;

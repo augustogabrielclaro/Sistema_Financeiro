@@ -9,7 +9,8 @@ void alterar_conta(lista_contas *lista_contas)
     int resp;
     int resp2;
     tela_contas();
-
+    gotoxy(28, 3);
+    printf("ALTERACAO DE CADASTRADOS");
     do
     {
         do
@@ -36,8 +37,9 @@ void alterar_conta(lista_contas *lista_contas)
         copia = aux->conteudo;
         exibir_unica_conta(aux);
         do
-        {
-            
+        {   
+            gotoxy(28, 3);
+            printf("ALTERACAO DE CADASTRADOS");
             limpar();
             printf("Digite o campo a ser alterado ou [0] para sair: ");
             scanf("%d", &campo);

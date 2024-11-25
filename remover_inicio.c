@@ -4,7 +4,7 @@ void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
     tipoApontador_conta p;
     tipoApontador_conta aux;
     int resp = 0;
-
+    int resp_i = 0;
     tela();
     gotoxy(20, 3);
     printf("                                                     ");
@@ -28,6 +28,8 @@ void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
         {
             p = lista_contas->primeiro;
             exibir_unica_conta(p);
+            gotoxy(28, 3);
+            printf("REMOCAO NO INICIO DA LISTA");
             limpar();
             printf("Deseja realmente remover esta conta? [1] Sim [2] Nao: ");
             scanf("%d", &resp);
@@ -40,6 +42,25 @@ void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
                     limpar();
                     printf("A conta nao pode ser excluida, pois tem movimentacoes!");
                     getch();
+                    do {
+                        limpar();
+                        printf("Deseja deixar ela inativada? [1] Sim [2] Nao: ");
+                        scanf("%d", &resp_i);
+                        fflush(stdin);
+                        if (resp_i == 1) {
+                            p->conteudo.status = 2;
+                            limpar();
+                            printf("Conta inativada com Sucesso!");
+                            getch();
+                            break;
+                        } else if (resp_i == 2) {
+                            break;
+                        } else {
+                            limpar();
+                            printf("Opcao invalida!");
+                            getch();
+                        }
+                    } while (1);
                     return;
                 }
                 else
@@ -67,6 +88,8 @@ void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
     do
     {   
         exibir_unica_conta(p);
+        gotoxy(28, 3);
+        printf("REMOCAO NO INICIO DA LISTA");
         limpar();
         printf("Deseja realmente remover esta conta? [1] Sim [2] Nao: ");
         scanf("%d", &resp);
@@ -79,6 +102,25 @@ void remover_inicio(lista_contas *lista_contas, lista_movim *m) {
                 limpar();
                 printf("A conta nao pode ser excluida, pois tem movimentacoes!");
                 getch();
+                do {
+                        limpar();
+                        printf("Deseja deixar ela inativada? [1] Sim [2] Nao: ");
+                        scanf("%d", &resp_i);
+                        fflush(stdin);
+                        if (resp_i == 1) {
+                            p->conteudo.status = 2;
+                            limpar();
+                            printf("Conta inativada com Sucesso!");
+                            getch();
+                            break;
+                        } else if (resp_i == 2) {
+                            break;
+                        } else {
+                            limpar();
+                            printf("Opcao invalida!");
+                            getch();
+                        }
+                    } while (1);
                 return;
             }
             else

@@ -130,4 +130,8 @@ void carregar_contas(lista_contas *lista_contas, const char *name);
 
 void ordem_codigo(lista_contas *lista_contas);
 
-void listar_movim();
+void listar_movim(lista_contas *lista_contas, lista_movim *m);
+
+tipoApontador_movim pesquisa_movim(lista_movim *m, int codigo);
+
+void tela_consulta_movim();
