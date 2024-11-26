@@ -13,7 +13,7 @@ void listar_movim(lista_contas *lista_contas, lista_movim *m)
     if (m->primeiro == NULL)
     {
         limpar();
-        printf("Nao ha movimentacoes para mostar!");
+        printf("Nao ha movimentacoes para mostrar!");
         getch();
         return;
     }
@@ -43,7 +43,9 @@ void listar_movim(lista_contas *lista_contas, lista_movim *m)
     movim = pesquisa_movim(m, aux->conteudo.codigo_conta);
     while (movim != NULL)
     {
+        linha = 9;
         tela_consulta_movim();
+
         while (movim != NULL && linha < MAX_PAG)
         {
             if (movim->conteudo.codigo_conta == reg_conta.codigo_conta)
@@ -62,17 +64,18 @@ void listar_movim(lista_contas *lista_contas, lista_movim *m)
 
                 gotoxy(71, linha);
                 printf("%.2f", movim->conteudo.valor_saldo);
+
+                linha++;
             }
 
-            linha++;
             movim = movim->proximo;
         }
-        if (linha > MAX_PAG)
+
+        if (movim != NULL)
         {
             limpar();
             printf("Pressione qualquer tecla para continuar...");
             getch();
-            linha = 9;
         }
     }
 

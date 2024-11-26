@@ -104,7 +104,7 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m);
 
 void alterar_conta(lista_contas *lista_contas);
 
-void transf_entre_contas();
+void transf_entre_contas(lista_contas *lista_contas, lista_movim *m);
 
 void menu_listagem(lista_contas *lista_contas, lista_movim *m);
 
@@ -135,3 +135,5 @@ void listar_movim(lista_contas *lista_contas, lista_movim *m);
 tipoApontador_movim pesquisa_movim(lista_movim *m, int codigo);
 
 void tela_consulta_movim();
+
+void tela_transf();

@@ -34,7 +34,7 @@ void menu_movim(lista_contas *lista_contas, lista_movim *m) {
             case 2:
                 // Transferencia
                 system("cls");
-                transf_entre_contas();
+                transf_entre_contas(lista_contas, m);
                 break;
             case 3:
                 // Listar

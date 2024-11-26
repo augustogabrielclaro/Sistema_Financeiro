@@ -35,6 +35,7 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
 
             gotoxy(30, 7);
             scanf("%d", &reg_contas.codigo_conta);
+            fflush(stdin);
 
             if (reg_contas.codigo_conta == 0)
             {
@@ -48,8 +49,15 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
                 getch();
             }
 
-        } while (aux == NULL || reg_contas.codigo_conta == 0);
+            if (aux->conteudo.status == 2) {
+                limpar();
+                printf("Contas inativadas nao podem fazer movimentacoes!");
+                getch();
+                continue;
+            }
+        } while (aux == NULL || reg_contas.codigo_conta != 0);
 
+        
         do
         {
             reg_movim.codigo_conta = reg_contas.codigo_conta;
