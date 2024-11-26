@@ -8,6 +8,7 @@ void alterar_conta(lista_contas *lista_contas)
     int campo;
     int resp;
     int resp2;
+    int tipo;
     tela_contas();
     gotoxy(28, 3);
     printf("ALTERACAO DE CADASTRADOS");
@@ -37,7 +38,7 @@ void alterar_conta(lista_contas *lista_contas)
         copia = aux->conteudo;
         exibir_unica_conta(aux);
         do
-        {   
+        {
             gotoxy(28, 3);
             printf("ALTERACAO DE CADASTRADOS");
             limpar();
@@ -70,12 +71,42 @@ void alterar_conta(lista_contas *lista_contas)
                 fgets(aux->conteudo.numero_conta, 20, stdin);
                 break;
             case 4:
-                gotoxy(25, 14);
-                printf("                                                    ");
-                gotoxy(25, 14);
-                fflush(stdin);
-                fgets(aux->conteudo.tipo_conta, 20, stdin);
+                do
+                {
+                    limpar();
+                    printf("[1] Poupanca  [2] Corrente  [3] Cartao de Credito");
+                    gotoxy(25, 14);
+                    printf("                                            ");
+                    gotoxy(25, 14);
+                    scanf("%d", &tipo);
+                    fflush(stdin);
+
+                    if (tipo == 1)
+                    {
+                        strcpy(aux->conteudo.tipo_conta, "Poupanca");
+                        break;
+                    }
+                    else if (tipo == 2)
+                    {
+                        strcpy(aux->conteudo.tipo_conta, "Corrente");
+                        break;
+                    }
+                    else if (tipo == 3)
+                    {
+                        strcpy(aux->conteudo.tipo_conta, "Cartao Credito");
+                        break;
+                    }
+                    else
+                    {
+                        limpar();
+                        printf("Opcao invalida!");
+                        getch();
+                    }
+                } while (1);
+                gotoxy(25,14);
+                printf("%s", aux->conteudo.tipo_conta);
                 break;
+               
             case 5:
                 limpar();
                 printf("Nao e possivel alterar o saldo diretamente!");
