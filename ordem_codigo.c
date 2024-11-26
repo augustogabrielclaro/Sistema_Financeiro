@@ -1,3 +1,9 @@
+/*********************************************************************************
+ Autores....: Augusto Gabriel Claro e Pedro Gerhard
+ Curso......: Analise e Desenvolvimento de Sistemas
+ Turma......: 2º ADS
+ Objetivo...: Fazer um sistema de gerenciamento financeiro
+*********************************************************************************/
 #include "funcoes.h"
 
 #define MAX_PAG 19

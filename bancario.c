@@ -1,8 +1,9 @@
-/************************************************************************
-Autores..: Augusto Claro e Pedro Gerhard
-Data.....: 24/10/2024
-Objetivo.: Criar um sistema de gerenciamento financeiro
-************************************************************************/
+/*********************************************************************************
+ Autores....: Augusto Gabriel Claro e Pedro Gerhard
+ Curso......: Analise e Desenvolvimento de Sistemas
+ Turma......: 2º ADS
+ Objetivo...: Fazer um sistema de gerenciamento financeiro
+*********************************************************************************/
 
 // PARA COMPILAR: gcc -g .\include\funcoes.h .\src\*.c -o .\output\bancario
 
