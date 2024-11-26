@@ -117,6 +117,7 @@ void transf_entre_contas(lista_contas *lista_contas, lista_movim *m)
         }
     } while (1);
 
+
     reg_movim.codigo_conta = aux->conteudo.codigo_conta;
     reg_movim2.codigo_conta = aux2->conteudo.codigo_conta;
     // Conta origem
@@ -157,17 +158,19 @@ void transf_entre_contas(lista_contas *lista_contas, lista_movim *m)
         novo_saldo = 0;
         novo_saldo2 = 0;
         limpar();
-        printf("Digite o valor da transferencia: ");
+        printf("Digite o valor da transferencia ou [0] para sair: ");
         gotoxy(42, 18);
         printf("                 ");
         gotoxy(42, 18);
         scanf("%f", &valor);
 
-        if (valor <= 0)
+        if (valor < 0)
         {
             limpar();
             printf("Digite um valor valido!");
             getch();
+        } else if (valor == 0) {
+            return;
         }
         else if (valor > saldo_total)
         {
