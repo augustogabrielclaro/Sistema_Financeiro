@@ -42,6 +42,7 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
                 return;
             }
             aux = pesquisa_conta(lista_contas, reg_contas);
+
             if (aux == NULL)
             {
                 limpar();
@@ -49,15 +50,20 @@ void movim_db_e_cd(lista_contas *lista_contas, lista_movim *m)
                 getch();
             }
 
-            if (aux->conteudo.status == 2) {
-                limpar();
-                printf("Contas inativadas nao podem fazer movimentacoes!");
-                getch();
-                continue;
+            if (aux != NULL)
+            {
+                if (aux->conteudo.status == 2)
+                {
+                    limpar();
+                    printf("Contas inativadas nao podem fazer movimentacoes!");
+                    getch();
+                    continue;
+                }
+                break;
             }
-        } while (aux == NULL || reg_contas.codigo_conta != 0);
 
-        
+        } while (1);
+
         do
         {
             reg_movim.codigo_conta = reg_contas.codigo_conta;

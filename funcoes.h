@@ -137,3 +137,5 @@ tipoApontador_movim pesquisa_movim(lista_movim *m, int codigo);
 void tela_consulta_movim();
 
 void tela_transf();
+
+char *validar_dt_transf(lista_movim *m, int codigo1, int codigo2);
