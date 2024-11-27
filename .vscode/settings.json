@@ -62,6 +62,7 @@
     "funcoes.h": "c",
     "string.h": "c",
     "stdio.h": "c",
-    "buscar_ultima_dt": "cpp"
+    "buscar_ultima_dt": "cpp",
+    "windows.h": "c"
   }
 }

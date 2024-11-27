@@ -1,9 +1,10 @@
-/*********************************************************************************
- Autores....: Augusto Gabriel Claro e Pedro Gerhard
+/******************************************************************************************************
+ Autor......: Augusto Gabriel Claro
+ Dupla......: Augusto Gabriel Claro - RA 176029-2024, Pedro Gerhard - RA 175240-2024
  Curso......: Analise e Desenvolvimento de Sistemas
  Turma......: 2º ADS
  Objetivo...: Fazer um sistema de gerenciamento financeiro
-*********************************************************************************/
+******************************************************************************************************/
 #include "funcoes.h"
 
 char *validar_dt(lista_movim *m, int codigo)
@@ -11,6 +12,7 @@ char *validar_dt(lista_movim *m, int codigo)
     char *dt_inserida = malloc(sizeof(char) * 11);
     char ultima_dt[11];
     char nova_data[11];
+    tipoApontador_movim aux;
 
     if (dt_inserida == NULL)
     {
@@ -38,7 +40,7 @@ char *validar_dt(lista_movim *m, int codigo)
         return NULL;
     }
 
-    tipoApontador_movim aux = buscar_ultima_dt(m, codigo);
+    aux = buscar_ultima_dt(m, codigo);
 
     if (aux != NULL)
     {
