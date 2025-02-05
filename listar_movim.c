@@ -52,8 +52,15 @@ void listar_movim(lista_contas *lista_contas, lista_movim *m)
         movim = pesquisa_movim(m, aux->conteudo.codigo_conta);
         while (movim != NULL)
         {
+            gotoxy();
             linha = 9;
             tela_consulta_movim();
+            gotoxy(10, 5);
+            printf("%d", aux->conteudo.codigo_conta);
+            gotoxy(15, 5);
+            printf("Banco: %s", aux->conteudo.banco);
+            gotoxy(40, 5);
+            printf("Numero da conta: %s", aux->conteudo.numero_conta);
 
             while (movim != NULL && linha < MAX_PAG)
             {
