@@ -7,12 +7,12 @@ Status: Desenvolvendo ⚠️
 ## Como instalar<h2>
 
 1. Clone o repositório:
- <https://github.com/augustogabrielclaro/trabalho_final.git>
+https://github.com/augustogabrielclaro/Sistema_Financeiro.git
 
 2. Crie uma pasta e abra com o **Git Bash**
 
 3. Digite o comando:
-git clone https://github.com/augustogabrielclaro/trabalho_final.git
+git clone https://github.com/augustogabrielclaro/Sistema_Financeiro.git
 
 ## Uso<h2>
 
