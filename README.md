@@ -1,6 +1,6 @@
 # Sistema Controle Bancário. ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) ![Windows](https://img.shields.io/badge/Windows-000?style=for-the-badge&logo=windows&logoColor=2CA5E0) ![Vscode](https://img.shields.io/badge/Vscode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white) <h1> 
 
-Status: Desenvolvendo ⚠️
+Status: Finalizado!
 
 ### Sistema de controle bancário é um programa que ajuda a gerenciar e organizar informações sobre contas bancárias e as movimentações financeiras realizadas nelas.<h3>
 
